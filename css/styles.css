@@ -137,6 +137,7 @@ button {
   padding-top: 32px;
   padding-bottom: 32px;
   display: block;
+  position: relative;
 }
 
 .nav-link:hover,
@@ -146,6 +147,24 @@ button {
 
 .nav-link.active-page {
   color: var(--primary-accent-color);
+}
+
+.nav-link.active-page::after {
+  content: '';
+
+  position: absolute;
+  left: 0;
+  bottom: 0%;
+
+  display: block;
+  height: 4px;
+  width: 100%;
+  background-color: var(--primary-accent-color);
+
+  opacity
+}
+
+.active-page:hover::after {
 }
 
 .header-contacts-list {
@@ -284,6 +303,40 @@ button {
 .services-item + .services-item {
   margin-left: 30px;
 }
+
+.services-item {
+  position: relative;
+}
+
+.services-banner {
+  position: absolute;
+  content: '';
+
+display: flex;
+align-items: center;
+justify-content: center;
+  
+  width: 100%;
+  height: 70px;
+  left: 0;
+  bottom: 0;
+  background: rgba(47, 48, 58, 0.8);
+}
+
+.servises-description {
+
+
+
+  font-weight: 700;
+font-size: 14px;
+line-height: 1.14;
+text-align: center;
+letter-spacing: 0.03em;
+text-transform: uppercase;
+color: var(--secondary-accent-color);
+}
+
+
 
 .advantages-title {
   font-weight: 700;
