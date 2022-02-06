@@ -241,6 +241,7 @@ button {
   line-height: 1.88;
   letter-spacing: 0.06em;
   border: none;
+  box-shadow: transparent;
   transition: background-color var(--transition-duration) var(--transition-type-basic),
     box-shadow var(--transition-duration) var(--transition-type-basic);
 }
@@ -509,6 +510,7 @@ button {
   background-color: var(--secondary-background-color);
   color: var(--title-text-color);
   border: transparent;
+  box-shadow: transparent;
   transition: background-color var(--transition-duration) var(--transition-type-basic),
     color var(--transition-duration) var(--transition-type-basic);
 }
@@ -550,23 +552,6 @@ button {
   position: relative;
   overflow: hidden;
 }
-
-/* .project-thumb::before {
-  content: '';
-
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background-color: var(--project-overlay-color);
-  opacity: 0;
-} */
-
-/* .project-link:hover .project-thumb::before,
-.project-link:focus .project-thumb::before {
-  transform: translateY(0);
-} */
 
 .project-top-text {
   position: absolute;
@@ -743,6 +728,16 @@ button {
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.2);
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 1000ms var(--transition-type-basic),
+    visibiliti 1000ms var(--transition-type-basic);
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0);
 }
 
 .modal {
@@ -750,7 +745,6 @@ button {
 
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
 
   width: 528px;
   min-height: 581px;
@@ -758,6 +752,16 @@ button {
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
+  visibility: visible;
+
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 1000ms var(--transition-type-basic),
+    visibiliti 1000ms var(--transition-type-basic);
+}
+
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0.5);
+  visibility: hidden;
 }
 
 .modal-btn {
