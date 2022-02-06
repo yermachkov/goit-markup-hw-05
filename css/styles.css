@@ -730,14 +730,13 @@ button {
   background-color: rgba(0, 0, 0, 0.2);
   opacity: 1;
   visibility: visible;
-  transition: opacity 1000ms var(--transition-type-basic),
-    visibiliti 1000ms var(--transition-type-basic);
+  transition: opacity var(--transition-duration) var(--transition-type-basic),
+    visibiliti var(--transition-duration) var(--transition-type-basic);
 }
 
 .backdrop.is-hidden {
   opacity: 0;
   visibility: hidden;
-  transform: scale(0);
 }
 
 .modal {
@@ -755,13 +754,12 @@ button {
   visibility: visible;
 
   transform: translate(-50%, -50%) scale(1);
-  transition: transform 1000ms var(--transition-type-basic),
-    visibiliti 1000ms var(--transition-type-basic);
+  transition: transform var(--transition-duration) var(--transition-type-basic),
+    visibiliti var(--transition-duration) var(--transition-type-basic);
 }
 
 .backdrop.is-hidden .modal {
   transform: translate(-50%, -50%) scale(0.5);
-  visibility: hidden;
 }
 
 .modal-btn {
